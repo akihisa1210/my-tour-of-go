@@ -11,6 +11,12 @@ type IPAddr [4]byte
 // {0, 0, 0, 0} => "0.0.0.0"
 func (ipaddr IPAddr) String() string {
 	return fmt.Sprintf("%d.%d.%d.%d", ipaddr[0], ipaddr[1], ipaddr[2], ipaddr[3])
+
+	// The following statement doesn't work but I don't know the reason...
+	// return string(ipaddr[0]) + "." + string(ipaddr[1]) + "." + string(ipaddr[2]) + "." + string(ipaddr[3])
+	// Result:
+	// loopback: ...
+	// googleDNS:.
 }
 
 func main() {
